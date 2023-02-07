@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# alignPredicted.sh
+
+blastp -query Trinity.fasta.transdecoder.pep  \
+    -db swissprot \
+    -outfmt "6 qseqid sacc qlen slen length nident pident evalue stitle" \
+    -evalue 1e-10 -num_threads 4 1> alignPredicted.outfmt6 \
+    2>alignPredicted.err 
